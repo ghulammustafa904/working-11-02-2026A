@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">MyStore</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart">
+                🛒 Cart: <span id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-page">
+        <h1>Our Products</h1>
+        
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card-full">
+                <div class="product-image-wrapper">
+                    <img src="https://via.placeholder.com/350" alt="Wireless Headphones">
+                    <span class="badge">Popular</span>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Wireless Headphones</h3>
+                    <p class="description">High-quality sound with noise cancellation technology</p>
+                    <div class="price-tag">$99.99</div>
+                    <div class="product-actions">
+                        <div class="quantity-control">
+                            <button class="decreaseBtn">-</button>
+                            <input type="number" class="quantity" value="1" min="1" readonly>
+                            <button class="increaseBtn">+</button>
+                        </div>
+                        <button class="add-to-cart">🛒 Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card-full">
+                <div class="product-image-wrapper">
+                    <img src="https://via.placeholder.com/350" alt="Smart Watch">
+                    <span class="badge new">New</span>
+                </div>
+                <div class="product-info">
+                    <h3>Smart Watch Pro</h3>
+                    <p class="description">Track your fitness and stay connected on the go</p>
+                    <div class="price-tag">$199.99</div>
+                    <div class="product-actions">
+                        <div class="quantity-control">
+                            <button class="decreaseBtn">-</button>
+                            <input type="number" class="quantity" value="1" min="1" readonly>
+                            <button class="increaseBtn">+</button>
+                        </div>
+                        <button class="add-to-cart">🛒 Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card-full">
+                <div class="product-image-wrapper">
+                    <img src="https://via.placeholder.com/350" alt="Bluetooth Speaker">
+                    <span class="badge sale">Sale</span>
+                </div>
+                <div class="product-info">
+                    <h3>Portable Bluetooth Speaker</h3>
+                    <p class="description">Powerful sound in a compact design, perfect for travel</p>
+                    <div class="price-tag">$49.99</div>
+                    <div class="product-actions">
+                        <div class="quantity-control">
+                            <button class="decreaseBtn">-</button>
+                            <input type="number" class="quantity" value="1" min="1" readonly>
+                            <button class="increaseBtn">+</button>
+                        </div>
+                        <button class="add-to-cart">🛒 Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

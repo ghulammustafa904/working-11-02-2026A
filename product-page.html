@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cart counter in header -->
+    <header>
+        <div class="cart">
+            🛒 Cart: <span id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Product section -->
+    <div class="product-container">
+        <div class="product-image">
+            <img src="https://via.placeholder.com/400" alt="Product">
+        </div>
+        
+        <div class="product-details">
+            <h1>Premium Wireless Headphones</h1>
+            <p class="description">High-quality sound with noise cancellation technology</p>
+            
+            <!-- Price -->
+            <div class="price">$99.99</div>
+            
+            <!-- Quantity selector -->
+            <div class="quantity-section">
+                <label>Quantity:</label>
+                <button id="decreaseBtn">-</button>
+                <input type="number" id="quantity" value="1" min="1" readonly>
+                <button id="increaseBtn">+</button>
+            </div>
+            
+            <!-- Add to cart button -->
+            <button id="addToCartBtn" class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
