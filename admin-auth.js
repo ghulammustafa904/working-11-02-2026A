@@ -66,11 +66,18 @@ class AuthManager {
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
 
+            console.log('Attempting login with email:', email);
+
             try {
-                await signInWithEmailAndPassword(auth, email, password);
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                console.log('Login successful:', userCredential.user.email);
                 this.showAlert('Authentication successful! Redirecting...', 'success');
-                setTimeout(() => window.location.href = 'admin-dashboard.html', 1500);
+                setTimeout(() => {
+                    console.log('Redirecting to dashboard...');
+                    window.location.href = 'admin-dashboard.html';
+                }, 1500);
             } catch (error) {
+                console.error('Login error:', error.code, error.message);
                 this.toggleLoader('emailLoginBtn', false);
                 const errorMessage = this.getErrorMessage(error.code);
                 this.showAlert(errorMessage, 'error');
