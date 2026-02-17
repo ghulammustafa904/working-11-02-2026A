@@ -52,6 +52,15 @@
         </div>
     </section>
 
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { app, analytics, auth, db, storage } from './firebase-config.js';
+        // Firebase is now initialized and ready to use
+        window.firebaseApp = app;
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+        window.firebaseStorage = storage;
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

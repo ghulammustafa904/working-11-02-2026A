@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MyStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="welcome-box">
+                <h2>Welcome, Admin!</h2>
+                <p id="adminEmail"></p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Manage Products</h3>
+                    <p>Add, edit, or remove products</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Orders</h3>
+                    <p>View and manage orders</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Customers</h3>
+                    <p>Manage customer accounts</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Analytics</h3>
+                    <p>View sales and statistics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth } from './firebase-config.js';
+        import { onAuthStateChanged, signOut } from 'firebase/auth';
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById('adminEmail').textContent = user.email;
+            } else {
+                window.location.href = 'admin-login.html';
+            }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await signOut(auth);
+            window.location.href = 'admin-login.html';
+        });
+    </script>
+</body>
+</html>
